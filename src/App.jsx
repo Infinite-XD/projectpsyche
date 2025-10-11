@@ -37,18 +37,61 @@ let formattedDate = months[mm] + " " + dd + ", " + yyyy
   const milliseconds = 24 * 60 * 60 * 1000
   let daystill = Math.floor(dates[0]/milliseconds)
 
-let times = getTime()
-
-setInterval(() => {
-  p.innerHTML = 'Time to econ: {daystill} {times[0]} {times[1]} {times[2]}';
-}, 1000);
   
   return (
     <>
     <p>Time to econ: {daystill}</p>
+    <p><i>Time is an illusion, dont be fooled.</i> </p>
     </>
   )
   
 }
+
+setInterval(() => {
+  Countdown()
+}, 100000);
+
+function newsFetcher() {
+  // main sources can be: theguardian, bbc, 
+  // extras: imf, cepr? 
+  var url = 'https://newsapi.org/v2/everything?' +
+            'q=bitcoin' +
+            'from=2024-10-11&' +
+            'sortBy=popularity&' +
+            'apiKey=49817c09f3ed4f95bd11e54f03ee4608';
+
+  var req = new Request(url);
+
+  fetch(req)
+      .then(function(response) {
+          console.log(response.json());
+      })
+
+}
+
+newsFetcher()
+
+function newsParser() {
+  return 
+}
+
+function newsAnalyser() {
+
+}
+
+function MainFeed() {
+  
+  return (
+    <>
+    
+
+    </>
+  )
+}
+
+
+
+
+
 
 export default App
