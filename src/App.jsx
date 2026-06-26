@@ -1,8 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Dropdown from "./components/dropdown";
+
 
 function App() {
 
@@ -186,134 +184,134 @@ function Quotes() {
   )
 }
 
-function getTime() {
-  let today = new Date();
-  let hrs = 23 - today.getHours();
-  let mins = 59 - today.getMinutes();
-  let secs = 59 - today.getSeconds();
+// function getTime() {
+//   let today = new Date();
+//   let hrs = 23 - today.getHours();
+//   let mins = 59 - today.getMinutes();
+//   let secs = 59 - today.getSeconds();
 
-  return [hrs, mins, secs]
-}
+//   return [hrs, mins, secs]
+// }
 
-function Countdown() {
+// function Countdown() {
 
-let today = new Date();
-const yyyy = today.getFullYear();
-let mm = today.getMonth();
-let dd = today.getDate();
-let p = document.querySelector('p')
-// let quotes = ['Time is an illusion, dont be fooled.', 'A man who cannot command himself will always be a slave.', 'The worst enemy you can meet will always be yourself.', 'Self-control is strength. Right thought is mastery. Calmness is power.', 'Rule your mind or it will rule you.', 'Not being able to govern events, I govern myself.', 'If you do not conquer self, you will be conquered by self.', 'The first and greatest victory is to conquer yourself.', 'We carry within us our greatest obstacle — and our greatest ally.']
-let quotes = ['Time is an illusion, dont be fooled.']
-let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-let formattedDate = months[mm] + " " + dd + ", " + yyyy
-  const dates = [
-    Date.parse("May 11, 2026") - Date.parse(formattedDate), 
-  ]
-  const milliseconds = 24 * 60 * 60 * 1000
-  let daystill = Math.floor(dates[0]/milliseconds)
+// let today = new Date();
+// const yyyy = today.getFullYear();
+// let mm = today.getMonth();
+// let dd = today.getDate();
+// let p = document.querySelector('p')
+// // let quotes = ['Time is an illusion, dont be fooled.', 'A man who cannot command himself will always be a slave.', 'The worst enemy you can meet will always be yourself.', 'Self-control is strength. Right thought is mastery. Calmness is power.', 'Rule your mind or it will rule you.', 'Not being able to govern events, I govern myself.', 'If you do not conquer self, you will be conquered by self.', 'The first and greatest victory is to conquer yourself.', 'We carry within us our greatest obstacle — and our greatest ally.']
+// let quotes = ['Time is an illusion, dont be fooled.']
+// let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+// let formattedDate = months[mm] + " " + dd + ", " + yyyy
+//   const dates = [
+//     Date.parse("May 11, 2026") - Date.parse(formattedDate), 
+//   ]
+//   const milliseconds = 24 * 60 * 60 * 1000
+//   let daystill = Math.floor(dates[0]/milliseconds)
 
   
-  return (
-    <>
-    <p>Time to econ: {daystill}</p>
-    <p><i>{quotes[Math.floor(Math.random() * quotes.length)]}</i> </p>
-    </>
-  )
+//   return (
+//     <>
+//     <p>Time to econ: {daystill}</p>
+//     <p><i>{quotes[Math.floor(Math.random() * quotes.length)]}</i> </p>
+//     </>
+//   )
   
-}
+// }
 
-setInterval(() => {
-  Countdown()
-}, 100000);
+// setInterval(() => {
+//   Countdown()
+// }, 100000);
 
-function newsFetcher() {
-  // newsAPI
-  let url = 'https://newsapi.org/v2/top-headlines?' +
-            'q=apple&' +
-            'from=2025-10-16&' +
-            'sortBy=popularity&' +
-            'language=en&' +
-            'apiKey=49817c09f3ed4f95bd11e54f03ee4608';
+// function newsFetcher() {
+//   // newsAPI
+//   let url = 'https://newsapi.org/v2/top-headlines?' +
+//             'q=apple&' +
+//             'from=2025-10-16&' +
+//             'sortBy=popularity&' +
+//             'language=en&' +
+//             'apiKey=49817c09f3ed4f95bd11e54f03ee4608';
 
-  let req = new Request(url);
+//   let req = new Request(url);
 
-  fetch(req)
-      .then(function(response) {
-          console.log('fetched')
-          console.log(response.json());
-      })
-
-
-  // bbc
-  const RSS_BBC = "https://feeds.bbci.co.uk/news/business/economy/rss.xml"
-  fetch(RSS_BBC)
-  .then(response => response.text())
-  .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-  .then(data => {
-    console.log(data);
-    const items = data.querySelectorAll("item");
-    let html = ``;
-    items.forEach(el => {
-      html += `
-        <article>
-          <img src="${el.querySelector("link").innerHTML}/image/large.png" alt="">
-          <h2>
-            <a href="${el.querySelector("link").innerHTML}" target="_blank" rel="noopener">
-              ${el.querySelector("title").innerHTML}
-            </a>
-          </h2>
-        </article>
-      `;
-    });
-    document.body.insertAdjacentHTML("beforeend", html);
-  });
+//   fetch(req)
+//       .then(function(response) {
+//           console.log('fetched')
+//           console.log(response.json());
+//       })
 
 
-
-
-
-  // BOE
-
-
-
-  // guardian
-
-
-
-
-  // google news
+//   // bbc
+//   const RSS_BBC = "https://feeds.bbci.co.uk/news/business/economy/rss.xml"
+//   fetch(RSS_BBC)
+//   .then(response => response.text())
+//   .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+//   .then(data => {
+//     console.log(data);
+//     const items = data.querySelectorAll("item");
+//     let html = ``;
+//     items.forEach(el => {
+//       html += `
+//         <article>
+//           <img src="${el.querySelector("link").innerHTML}/image/large.png" alt="">
+//           <h2>
+//             <a href="${el.querySelector("link").innerHTML}" target="_blank" rel="noopener">
+//               ${el.querySelector("title").innerHTML}
+//             </a>
+//           </h2>
+//         </article>
+//       `;
+//     });
+//     document.body.insertAdjacentHTML("beforeend", html);
+//   });
 
 
 
 
 
-  // oxylabs
+//   // BOE
 
-}
 
-newsFetcher()
 
-function newsParser() {
-  return 
-}
+//   // guardian
 
-function newsAnalyser() {
 
-}
 
-function MainFeed() {
+
+//   // google news
+
+
+
+
+
+//   // oxylabs
+
+// }
+
+// newsFetcher()
+
+// function newsParser() {
+//   return 
+// }
+
+// function newsAnalyser() {
+
+// }
+
+// function MainFeed() {
   
-  return (
-    <>
+//   return (
+//     <>
     
 
-    </>
-  )
-}
+//     </>
+//   )
+// }
 
-function Idk() {
+// function Idk() {
 
-}
+// }
 
 
 
