@@ -2,7 +2,7 @@
   "name": "projectpsyche",
   "private": true,
   "version": "0.0.0",
-  "homepage": "projectpsyche.co.uk",
+  "homepage": "https://infinite-xd.github.io/projectpsyche/",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -1,6 +1,6 @@
 Development Flow
 
-- npm run preview
+- npm run dev
 - commit/push changes once satisfied to main 
 
 Flow for gh pages:
