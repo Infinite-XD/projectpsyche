@@ -2,12 +2,10 @@
   "name": "projectpsyche",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://infinite-xd.github.io/projectpsyche/",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "add-domain": "echo \"projectpsyche.co.uk\" > build/CNAME",
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
