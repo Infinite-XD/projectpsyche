@@ -2,17 +2,20 @@
   "name": "projectpsyche",
   "private": true,
   "version": "0.0.0",
+  "homepage": "projectpsyche.co.uk",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "add-domain": "echo \"projectpsyche.co.uk\" > build/CNAME",
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.9.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",

@@ -1,0 +1,59 @@
+/* Top bar */
+.dropdown-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 14px 0;
+  background: #232325;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  border-bottom: 2px solid #2a2a2d;
+}
+
+/* Wrapper for custom arrow */
+.dropdown-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Modern select */
+.dropdown-select {
+  padding: 10px 38px 10px 14px;
+  background: #2a2a2d;
+  color: #f1f1f1;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  appearance: none; /* Removes native dropdown arrow */
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Hover */
+.dropdown-select:hover {
+  background: #343437;
+}
+
+/* Focus */
+.dropdown-select:focus {
+  background: #3b3b3f;
+}
+
+/* Custom arrow */
+.dropdown-arrow {
+  position: absolute;
+  right: 16px;
+  bottom: 11px;
+  pointer-events: none;
+  color: #aaa;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.dropdown-select:hover + .dropdown-arrow {
+  color: #fff;
+}
